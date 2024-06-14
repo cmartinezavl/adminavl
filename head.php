@@ -23,23 +23,11 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <?php if ($url == "/adminavl/views/estado-cliente/") {?>
     <title>Estado Cliente - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl/views/treseme/vehiculos/") {?>
-    <title>Vehículos Treseme - AVLChile</title>
+    <?php if ($url == "/adminavl/views/usuarios/") {?>
+    <title>Usuarios - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl/views/treseme/emsefor/") {?>
-    <title>Emsefor Treseme - AVLChile</title>
-    <?php } ?>
-    <?php if ($url == "/adminavl/views/treseme/usuarios/") {?>
-    <title>Usuarios Treseme - AVLChile</title>
-    <?php } ?>
-    <?php if ($url == "/adminavl/views/sofofa/vehiculos/") {?>
-    <title>Vehículos Sofofa - AVLChile</title>
-    <?php } ?>
-    <?php if ($url == "/adminavl/views/integraciones/vehiculos/") {?>
-    <title>Vehículos Integraciones - AVLChile</title>
-    <?php } ?>
-    <?php if ($url == "/adminavl/views/integraciones/validaciones/") {?>
-    <title>Validaciones Integraciones - AVLChile</title>
+    <?php if ($url == "/adminavl/views/cotizacion/") {?>
+    <title>Cotización - AVLChile</title>
     <?php } ?>
 
     <!-- FAVICON -->

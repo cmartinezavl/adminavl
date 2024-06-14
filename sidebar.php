@@ -54,7 +54,13 @@
                 </li>
                 <!-- End::slide -->
 
-
+                <li class="slide mb-1">
+                    <a href="<?php echo $base_url?>views/cotizacion"
+                        class="side-menu__item <?php if($url == "/adminavl/views/cotizacion/"){echo "active";} ?>">
+                        <i class="las la-dollar-sign side-menu__icon"></i>
+                        <span class="side-menu__label">Cotización</span>
+                    </a>
+                </li>
                 <li class="slide mb-1">
                     <a href="<?php echo $base_url?>views/solicitud-servicios"
                         class="side-menu__item <?php if($url == "/adminavl/views/solicitud-servicios/"){echo "active";} ?>">
