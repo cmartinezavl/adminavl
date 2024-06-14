@@ -4,7 +4,6 @@ let mainContent;
 (function () {
     let html = document.querySelector('html');
     mainContent = document.querySelector('.main-content');
-
     if (document.querySelector("#switcher-canvas")) {
         localStorageBackup2();
         switcherClick();
@@ -13,7 +12,8 @@ let mainContent;
             checkOptions();
         }, 1000);
     }
-
+    localStorage.removeItem("bgimg");
+    html.removeAttribute('data-bg-img');
 })();
 
 function switcherClick() {
@@ -600,6 +600,17 @@ function switcherClick() {
         localStorage.setItem("loaderEnable","false")
     }
     /* loader end */
+
+    // iconOverayFn();
+    // localStorage.setItem("ynexverticalstyles", 'overlay');
+    // document.querySelectorAll(".main-menu>li.open").forEach((ele)=>{
+    //     if(!ele.classList.contains('active')){
+    //         ele.classList.remove('open')
+    //         ele.querySelector('ul').style.display = 'none'
+    //     }
+    // })
+    // html.setAttribute('data-bg-img', 'bgimg1')
+    // localStorage.setItem("bgimg", "bgimg1")
 }
 
 function ltrFn() {
@@ -1090,6 +1101,12 @@ function updateColors() {
     
 }
 updateColors()
+
+let html = document.querySelector('html');
+localStorage.setItem("primaryRGB", "53, 127, 188");
+html.style.setProperty('--primary-rgb', `53, 127, 188`);
+updateColors();
+
 
 function localStorageBackup2(){
     if (localStorage.bodyBgRGB || localStorage.bodylightRGB){

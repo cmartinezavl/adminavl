@@ -670,7 +670,7 @@
   }
 }
 [data-menu-styles=dark][data-theme-mode=light] {
-  --menu-bg: #111c43;
+  --menu-bg: #1A1C1E;
   --menu-prime-color: #a3aed1;
 }
 [data-menu-styles=color] {
@@ -9609,7 +9609,7 @@ caption {
   height: auto;
 }
 .authentication .authentication-cover {
-  background-image: url(./1-MXOX5PN3.jpg);
+  background-image: url(../../assets/images/fondos/forestal.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9876,7 +9876,7 @@ button {
 }
 @media (min-width: 992px) {
   .footer {
-    padding-inline-start: 15rem;
+    padding-inline-start: 9rem;
   }
 }
 .footer {
@@ -17092,7 +17092,7 @@ code[class*=language-] {
   height: 0.3rem;
   border: 1px solid var(--menu-prime-color);
   border-radius: 50%;
-  background-color: transparent;
+  background-color: white;
   opacity: 1;
 }
 .app-sidebar .slide-menu.child1 li,
@@ -17212,7 +17212,7 @@ code[class*=language-] {
   bottom: 0px;
   left: 0px;
   z-index: 101;
-  background-color: rgba(15, 23, 42, 0.5);
+  background-color: rgba(37, 39, 41, 0.5);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 100ms;
@@ -21172,4 +21172,130 @@ a:hover {
 }
 .transform-none {
   transform: none !important;
+}
+
+
+/* MultiStep */
+
+
+.multisteps-form__progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(0,1fr))
+}
+
+.multisteps-form__progress-btn {
+  transition-property: all;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  position: relative;
+  padding-top: 20px;
+  color: #868686;
+  text-indent: -9999px;
+  border: none;
+  background-color: transparent;
+  outline: none!important;
+  cursor: pointer
+}
+
+@media (min-width: 500px) {
+  .multisteps-form__progress-btn {
+      text-indent:0
+  }
+}
+
+.multisteps-form__progress-btn:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 13px;
+  height: 13px;
+  content: "";
+  transform: translateX(-50%);
+  transition: all .15s linear 0s,transform .15s cubic-bezier(.05,1.09,.16,1.4) 0s;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background-color: #868686;
+  box-sizing: border-box;
+  z-index: 3
+}
+
+.multisteps-form__progress-btn:after {
+  position: absolute;
+  top: 5px;
+  left: calc(-50% - 13px / 2);
+  transition-property: all;
+  transition-duration: .15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: currentColor;
+  z-index: 1
+}
+
+.multisteps-form__progress-btn:first-child:after {
+  display: none
+}
+
+.multisteps-form__progress-btn.js-active {
+  color: rgb(var(--primary-rgb)) !important;
+}
+
+.multisteps-form__progress-btn.js-active.finalizado:after {
+  color: green;
+}
+
+.multisteps-form__progress-btn.js-active.pendiente:before {
+  border: none !important;
+  background: linear-gradient(90deg, rgba(53,127,188,1) 0%, rgba(0,128,19,1) 100%);
+}
+
+.multisteps-form__progress-btn.js-active.finalizado:before {
+  color: green
+}
+
+.multisteps-form__progress-btn.js-active span {
+  color: #7896ae;
+  font-weight: bold;
+}
+
+.multisteps-form__progress-btn.js-active.finalizado span {
+  color: green;
+  font-weight: bold;
+}
+
+.multisteps-form__progress-btn.js-active:before {
+  transform: translateX(-50%) scale(1.2);
+  background-color: currentColor
+}
+
+.multisteps-form__panel {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  visibility: visible
+}
+
+.multisteps-form__panel.js-active {
+  height: auto;
+  opacity: 1;
+  visibility: visible
+}
+
+.multisteps-form__panel[data-animation=scaleIn] {
+  transform: scale(.9)
+}
+
+.multisteps-form__panel[data-animation=scaleIn].js-active {
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  transform: scale(1)
 }

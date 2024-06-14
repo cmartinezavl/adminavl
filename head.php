@@ -1,15 +1,13 @@
 <?php
 include "session.php";
 $url = $_SERVER["REQUEST_URI"];
-$base_url = 'http://localhost/adminavl_v4/'; //desa
-//$base_url = 'https://webapp.avlchile.cl/adminavl_v4/'; //prod
+$base_url = 'http://localhost/adminavl_v3/'; //desa
+//$base_url = 'https://webapp.avlchile.cl/adminavl_v3/'; //prod
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light"
-    data-menu-styles="dark" data-toggled="close">
+    data-menu-styles="dark" data-toggled="icon-overlay-close" style="--primary-rgb: 53, 127, 188;">
 
 <head>
 
@@ -17,81 +15,74 @@ $base_url = 'http://localhost/adminavl_v4/'; //desa
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Description" content="PHP Bootstrap Responsive Admin Web Dashboard Template">
-    <meta name="Author" content="Spruko Technologies Private Limited">
-    <meta name="keywords"
-        content="dashboard, template dashboard, Bootstrap dashboard, admin panel template, sales dashboard, Bootstrap admin panel, stocks dashboard, crm admin dashboard, ecommerce admin panel, admin template, admin panel dashboard, course dashboard, template ecommerce website, dashboard hrm, admin dashboard">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
     <!-- TITLE -->
-    <title> AVLChile </title>
+    <?php if ($url == "/adminavl_v3/views/dashboard/") {?>
+    <title>Dashboard - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/estado-cliente/") {?>
+    <title>Estado Cliente - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/treseme/vehiculos/") {?>
+    <title>Vehículos Treseme - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/treseme/emsefor/") {?>
+    <title>Emsefor Treseme - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/treseme/usuarios/") {?>
+    <title>Usuarios Treseme - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/sofofa/vehiculos/") {?>
+    <title>Vehículos Sofofa - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/integraciones/vehiculos/") {?>
+    <title>Vehículos Integraciones - AVLChile</title>
+    <?php } ?>
+    <?php if ($url == "/adminavl_v3/views/integraciones/validaciones/") {?>
+    <title>Validaciones Integraciones - AVLChile</title>
+    <?php } ?>
 
     <!-- FAVICON -->
-    <link rel="icon" href="../../assets/images/authentication/Logo_AVL.png">
+    <link rel="icon" href="<?php echo $base_url?>assets/images/authentication/Logo_AVL.png">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+        integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="../../assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link id="style" href="<?php echo $base_url?>assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- ICONS CSS -->
-    <link href="../../assets/css/icons.css" rel="stylesheet">
-
+    <link href="<?php echo $base_url?>assets/css/icons.css" rel="stylesheet">
     <!-- STYLES CSS -->
-    <link href="../../assets/css/styles.css" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="../../assets/css/virtual-select.min.css" />
-
-    <!-- MAIN JS -->
-    <script src="../../assets/js/main.js"></script>
-
+    <link href="<?php echo $base_url?>assets/css/styles.css" rel="stylesheet">
     <!-- NODE WAVES CSS -->
-    <link href="../../assets/libs/node-waves/waves.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="<?php echo $base_url?>assets/libs/node-waves/waves.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/libs/prismjs/themes/prism-coy.min.css">
     <!-- SIMPLEBAR CSS -->
-    <link rel="stylesheet" href="../../assets/libs/simplebar/simplebar.min.css">
-
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/libs/simplebar/simplebar.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/css/virtual-select.min.css" />
     <!-- COLOR PICKER CSS -->
-    <link rel="stylesheet" href="../../assets/libs/flatpickr/flatpickr.min.css">
-    <link rel="stylesheet" href="../../assets/libs/@simonwep/pickr/themes/nano.min.css">
-    <link rel="stylesheet" href="../../assets/libs/prismjs/themes/prism-coy.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/libs/@simonwep/pickr/themes/nano.min.css">
     <!-- CHOICES CSS -->
-    <link rel="stylesheet" href="../../assets/libs/choices.js/public/assets/styles/choices.min.css">
-
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/css/index.css">
     <!-- Datatables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url?>assets/css/datatables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/libs/sweetalert2/sweetalert2.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-
-    <!-- Date pick -->
-    <link rel="stylesheet" href="../../assets/libs/flatpickr/flatpickr.min.css">
-
-    <!-- CHOICES JS -->
-    <script src="../../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
-
-    <!-- VIRTUAL SELECT JS -->
-    <script src="../../assets/js/virtual-select.min.js"></script>
-    <!-- QUILL CSS -->
-    <link rel="stylesheet" href="../../assets/libs/quill/quill.snow.css">
-    <link rel="stylesheet" href="../../assets/libs/quill/quill.bubble.css">
-
-    <!-- FILEPOND CSS -->
-    <link rel="stylesheet" href="../../assets/libs/filepond/filepond.min.css">
-    <link rel="stylesheet" href="../../assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css">
-    <link rel="stylesheet" href="../../assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.css">
-
-
-
-    <!-- SWEETALERTS CSS -->
-    <link rel="stylesheet" href="../../assets/libs/sweetalert2/sweetalert2.min.css">
-    <!-- SWEETALERTS JS -->
-    <script src="../../assets/libs/sweetalert2/sweetalert2.min.js"></script>
-
-    <!-- DATATABLES CDN JS -->
-
+    <script src="<?php echo $base_url?>assets/js/virtual-select.min.js"></script>
+    <script src="<?php echo $base_url?>assets/js/main.js"></script>
+    <script src="<?php echo $base_url?>assets/js/moment.js"></script>
+    <script src="<?php echo $base_url?>assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="<?php echo $base_url?>assets/libs/prismjs/prism.js"></script>
+    <script src="<?php echo $base_url?>assets/js/prism-custom.js"></script>
+    <script src="<?php echo $base_url?>assets/js/Toasts.js"></script>
+    
+    <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
@@ -102,38 +93,29 @@ $base_url = 'http://localhost/adminavl_v4/'; //desa
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
+    <script src="<?php echo $base_url?>assets/js/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
 
-    <!-- INTERNAL DATATABLES JS -->
-    <script src="../../assets/js/datatables.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/modules/timeline.js"></script>
+    <script src="<?php echo $base_url?>assets/js/grouped-categories.js"></script>
+    <script src="<?php echo $base_url; ?>assets/libs/sweetalert2/sweetalert2.min.js"></script>
 
-    <script src="../../assets/libs/flatpickr/flatpickr.min.js"></script>
-    <script src="../../assets/js/date&time_pickers.js"></script>
+    <style>
+    .modal-header {
+        padding: 14px;
+        border-block-end: 1px solid var(--default-border);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
 
-    <!-- QUILL JS -->
-    <script src="../../assets/libs/quill/quill.min.js"></script>
-
-    <!-- FILEPOND JS -->
-    <script src="../../assets/libs/filepond/filepond.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-    <script
-        src="../../assets/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
-    <script
-        src="../../assets/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-image-edit/filepond-plugin-image-edit.min.js"></script>
-    <script
-        src="../../assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
-    <script
-        src="../../assets/libs/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
-    <script src="../../assets/libs/filepond-plugin-image-transform/filepond-plugin-image-transform.min.js"></script>
-
-    <!-- FLAT PICKER JS -->
-    <script src="../../assets/libs/flatpickr/flatpickr.min.js"></script>
-
-    <!-- CREATE PROJECT JS -->
-    <script src="../../assets/js/create-project.js"></script>
+    .modal-footer {
+        padding: 8px;
+        border-block-start: 1px solid var(--default-border);
+    }
+    </style>
 
 </head>
 
@@ -141,11 +123,12 @@ $base_url = 'http://localhost/adminavl_v4/'; //desa
 
     <!-- SWITCHER -->
     <?php include 'switcher.php'; ?>
+
     <!-- END SWITCHER -->
 
     <!-- LOADER -->
     <div id="loader">
-        <img src="../../assets/images/media/loader.svg" alt="">
+        <img src="<?php echo $base_url?>assets/images/media/loader.svg" alt="">
     </div>
     <!-- END LOADER -->
 

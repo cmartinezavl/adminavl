@@ -2,8 +2,8 @@
     'use strict';
 
     /* for basic sweet alert */
-    document.getElementById('x').onclick = function () {
-        Swal.fire('El email que a ingresado es incorrecto o no se encuentra')
+    document.getElementById('basic-alert').onclick = function () {
+        Swal.fire('Hello this is Basic alert message')
     };
     document.getElementById('alert-text').onclick = function () {
         Swal.fire(

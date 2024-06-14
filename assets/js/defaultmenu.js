@@ -342,7 +342,7 @@ function ResizeMenu() {
       else {
         mainContent.removeEventListener('click', clearNavDropdown);
       }
-      html.removeAttribute('data-toggled')
+      // html.removeAttribute('data-toggled')
     }
   }
   checkHoriMenu();
@@ -365,7 +365,7 @@ function toggleSidemenu() {
       let sidemenulink = document.querySelectorAll('.main-menu li > .side-menu__item');
       sidemenulink.forEach(ele => ele.removeEventListener('click', doubleClickFn))
 
-      let verticalStyle = html.getAttribute('data-vertical-style');
+      let verticalStyle = "overlay";
       switch (verticalStyle) {
         // closed
         case "closed":

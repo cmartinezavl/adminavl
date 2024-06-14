@@ -1,9 +1,9 @@
 <?php 
     session_start();
-
-    if (isset($_COOKIE['loggedin']) && $_COOKIE['loggedin'] == true) {
-        header("Location: http://localhost/adminavl_v4/views/usuarios");
-        //header("Location: https://webapp.avlchile.cl/adminavl_v4/views/usuarios");
+    include "mcript.php";
+    if (isset($_COOKIE['access_key'])) {
+        header("Location: http://localhost/adminavl_v3/views/dashboard");
+        //header("Location: https://webapp.avlchile.cl/adminavl_v3/views/dashboard");
     }
 ?>
 <?php
@@ -36,20 +36,18 @@
         try {
             include "models/conexion.php";
             $usuario = strtolower($_COOKIE["user"]);
-            $pass = $_POST["password"];
+            $pass = md5($_POST["password"]);
             $id = "";
             $nombre = "";
             $apellido = "";
-            $nombre_usuario = "";
             $perfil = "";
 			$id_perfil = "";
 			$estado = "";
-			$vista = "";
 
-			$query = "SELECT u.id, u.nombre, u.apellido, u.nombre_usuario, u.id_perfil, u.estado, u.vista_solicitudes, p.perfil
-					 FROM adm_usuario u
-                     INNER JOIN adm_perfil p ON p.id_perfil = u.id_perfil
-					 WHERE u.nombre_usuario = '$usuario'
+			$query = "SELECT u.id_usuario, u.nombre, u.apellido, u.id_perfil, u.estado, p.nombre AS nombre_perfil
+					 FROM usuario u
+                     INNER JOIN perfil p ON p.id_perfil = u.id_perfil
+					 WHERE u.usuario = '$usuario'
 					 AND u.password = '$pass'";
 
 
@@ -57,31 +55,25 @@
             
 			if (sqlsrv_num_rows($result) > 0) {
 				while($rows  = sqlsrv_fetch_object($result) ) {
-                    $id = $rows->id;
+                    $id = $rows->id_usuario;
 					$nombre = $rows->nombre;
                     $apellido = $rows->apellido;
-                    $nombre_usuario = $rows->nombre_usuario;
 					$id_perfil = $rows->id_perfil;
 					$estado = $rows->estado;
-					$vista = $rows->vista_solicitudes;
-                    $perfil = $rows->perfil;
+                    $perfil = $rows->nombre_perfil;
 				}
                 
                 if($estado == 1){
-					setcookie('loggedin', true, time() + 10800);
 					setcookie('access_key', $key, time() + 10800);
 					setcookie('id', $id, time() + 10800);
 					setcookie('nombre', $nombre, time() + 10800);
 					setcookie('apellido', $apellido, time() + 10800);
-					setcookie('nombre_usuario', $nombre_usuario, time() + 10800);
 					setcookie('id_perfil', $id_perfil, time() + 10800);
                     setcookie('perfil', $perfil, time() + 10800);
-                    setcookie('pass', encryptIt($_POST["password"]), time() + 43200);
-					if($id_perfil == 8){
-						setcookie('vista', $vista, time() + 10800);
-					}
+
+                    setcookie('pass', $encriptar($_POST["password"]), time() + 43200);
 					
-					$tsql = "UPDATE adm_usuario SET fecha = CURRENT_TIMESTAMP WHERE id = '$id'";
+					$tsql = "UPDATE usuario SET ultima_conexion = CURRENT_TIMESTAMP WHERE id_usuario = $id";
 					$result = sqlsrv_query( $conexion, $tsql );
 					
 					header("Location: views/dashboard");
@@ -101,18 +93,6 @@
 		} finally {
 			sqlsrv_close( $conexion );
 		}
-    }
-
-    function encryptIt( $q ) {
-        $cryptKey  = 'qJB0rGtIn5UB1xG03efyCp';
-        $qEncoded      = base64_encode( mcrypt_encrypt( MCRYPT_RIJNDAEL_256, md5( $cryptKey ), $q, MCRYPT_MODE_CBC, md5( md5( $cryptKey ) ) ) );
-        return( $qEncoded );
-    }
-
-    function decryptIt( $q ) {
-        $cryptKey  = 'qJB0rGtIn5UB1xG03efyCp';
-        $qDecoded      = rtrim( mcrypt_decrypt( MCRYPT_RIJNDAEL_256, md5( $cryptKey ), base64_decode( $q ), MCRYPT_MODE_CBC, md5( md5( $cryptKey ) ) ), "\0");
-        return( $qDecoded );
     }
 ?>
 <!DOCTYPE html>

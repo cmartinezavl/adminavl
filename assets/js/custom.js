@@ -308,7 +308,7 @@
       new Choices(element, {
         allowHTML: true,
         placeholderValue: "This is a placeholder set in the config",
-        searchPlaceholderValue: "Buscar",
+        searchPlaceholderValue: "Search",
       });
     }
   });
