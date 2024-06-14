@@ -38,7 +38,7 @@
                 <li class="slide__category"><span class="category-name">RESUMEN</span></li>
                 <li class="slide mb-1">
                     <a href="<?php echo $base_url?>views/dashboard"
-                        class="side-menu__item <?php if($url == "/adminavl_v3/views/dashboard/"){echo "active";} ?>">
+                        class="side-menu__item <?php if($url == "/adminavl/views/dashboard/"){echo "active";} ?>">
                         <i class="las la-tachometer-alt side-menu__icon"></i>
                         <span class="side-menu__label">Dashboard</span>
                     </a>
@@ -47,7 +47,7 @@
                 <!-- End::slide__category -->
                 <li class="slide mb-1">
                     <a href="<?php echo $base_url?>views/estado-cliente"
-                        class="side-menu__item <?php if($url == "/adminavl_v3/views/estado-cliente/"){echo "active";} ?>">
+                        class="side-menu__item <?php if($url == "/adminavl/views/estado-cliente/"){echo "active";} ?>">
                         <i class="las la-toggle-on side-menu__icon" style="color:#357FBC;"></i>
                         <span class="side-menu__label">Estado Cliente</span>
                     </a>
@@ -57,7 +57,7 @@
 
                 <li class="slide mb-1">
                     <a href="<?php echo $base_url?>views/solicitud-servicios"
-                        class="side-menu__item <?php if($url == "/adminavl_v3/views/solicitud-servicios/"){echo "active";} ?>">
+                        class="side-menu__item <?php if($url == "/adminavl/views/solicitud-servicios/"){echo "active";} ?>">
                         <i class="las la-clipboard-list side-menu__icon"></i>
                         <span class="side-menu__label">Solicitud de Servicios</span>
                     </a>
@@ -68,16 +68,16 @@
 
                 <li class="slide mb-1">
                     <a href="<?php echo $base_url?>views/usuarios"
-                        class="side-menu__item <?php if($url == "/adminavl_v3/views/usuarios/"){echo "active";} ?>">
+                        class="side-menu__item <?php if($url == "/adminavl/views/usuarios/"){echo "active";} ?>">
                         <i class="las la-users side-menu__icon"></i>
                         <span class="side-menu__label">Usuarios</span>
                     </a>
                 </li>
 
                 <li
-                    class="slide has-sub mb-1 <?php if($url == "/adminavl_v3/views/integraciones/vehiculos/" || $url == "/adminavl_v3/views/integraciones/validaciones/"){echo "open";} ?>">
+                    class="slide has-sub mb-1 <?php if($url == "/adminavl/views/integraciones/vehiculos/" || $url == "/adminavl/views/integraciones/validaciones/"){echo "open";} ?>">
                     <a href="javascript:void(0);"
-                        class="side-menu__item <?php if($url == "/adminavl_v3/views/integraciones/vehiculos/" || $url == "/adminavl_v3/views/integraciones/validaciones/"){echo "active";} ?>">
+                        class="side-menu__item <?php if($url == "/adminavl/views/integraciones/vehiculos/" || $url == "/adminavl/views/integraciones/validaciones/"){echo "active";} ?>">
                         <i class="side-menu__icon"><img style="margin-bottom: 14px !important;" width="15" heigth="15"
                                 src="<?php echo $base_url?>assets/images/fondos/integraciones.png"></i>
                         <span class="side-menu__label">Integraciones</span>
@@ -86,13 +86,13 @@
                     <ul class="slide-menu child1"
                         style="position: relative; left: 0px; top: 0px; margin: 0px; transform: translate3d(119.2px, 236.8px, 0px); display: none; box-sizing: border-box;"
                         data-popper-placement="bottom">
-                        <li class="slide mt-1 <?php if($url == "/adminavl_v3/views/integraciones/vehiculos/"){echo "active";} ?>">
+                        <li class="slide mt-1 <?php if($url == "/adminavl/views/integraciones/vehiculos/"){echo "active";} ?>">
                             <a href="<?php echo $base_url?>views/integraciones/vehiculos"
-                                class="side-menu__item <?php if($url == "/adminavl_v3/views/integraciones/vehiculos/"){echo "active";} ?>">Vehículos</a>
+                                class="side-menu__item <?php if($url == "/adminavl/views/integraciones/vehiculos/"){echo "active";} ?>">Vehículos</a>
                         </li>
-                        <li class="slide mt-1 <?php if($url == "/adminavl_v3/views/integraciones/validaciones/"){echo "active";} ?>">
+                        <li class="slide mt-1 <?php if($url == "/adminavl/views/integraciones/validaciones/"){echo "active";} ?>">
                             <a href="<?php echo $base_url?>views/integraciones/validaciones"
-                                class="side-menu__item <?php if($url == "/adminavl_v3/views/integraciones/validaciones/"){echo "active";} ?>">Validaciones</a>
+                                class="side-menu__item <?php if($url == "/adminavl/views/integraciones/validaciones/"){echo "active";} ?>">Validaciones</a>
                         </li>
                     </ul>
                 </li>

@@ -15,10 +15,10 @@
  setcookie('pass', '', 0);
  
 if(isset($_COOKIE['user'])){
-    header('Location: http://localhost/adminavl_v3/lock-screen.php');
-    // header('Location: https://webapp.avlchile.cl/adminavl_v3/login.php');
+    header('Location: http://localhost/adminavl/lock-screen.php');
+    // header('Location: https://webapp.avlchile.cl/adminavl/login.php');
 }else{
-    header('Location: http://localhost/adminavl_v3/login.php');
-    // header('Location: https://webapp.avlchile.cl/adminavl_v3/login.php');
+    header('Location: http://localhost/adminavl/login.php');
+    // header('Location: https://webapp.avlchile.cl/adminavl/login.php');
 }
  

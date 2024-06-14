@@ -1,6 +1,6 @@
-var base_url_config = "http://localhost/adminavl_v3/"; //desa
+var base_url_config = "http://localhost/adminavl/"; //desa
 
-// var base_url_config = 'https://webapp.avlchile.cl/adminavl_v3/'
+// var base_url_config = 'https://webapp.avlchile.cl/adminavl/'
 
 var id_usuario = getCookie("id");
 
@@ -168,14 +168,14 @@ function actualizarDatos(nombre, apellido) {
         toast.show();
 
         document.cookie =
-          "nombre=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/adminavl_v3;";
+          "nombre=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/adminavl;";
 
-        document.cookie = "nombre=" + nombre + "; path=/adminavl_v3;";
+        document.cookie = "nombre=" + nombre + "; path=/adminavl;";
 
         document.cookie =
-          "apellido=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/adminavl_v3;";
+          "apellido=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/adminavl;";
 
-        document.cookie = "apellido=" + apellido + "; path=/adminavl_v3;";
+        document.cookie = "apellido=" + apellido + "; path=/adminavl;";
 
         $("#nombreNav").text(nombre+' '+apellido);
         

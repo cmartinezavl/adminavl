@@ -1,8 +1,8 @@
 <?php
 include "session.php";
 $url = $_SERVER["REQUEST_URI"];
-$base_url = 'http://localhost/adminavl_v3/'; //desa
-//$base_url = 'https://webapp.avlchile.cl/adminavl_v3/'; //prod
+$base_url = 'http://localhost/adminavl/'; //desa
+//$base_url = 'https://webapp.avlchile.cl/adminavl/'; //prod
 ?>
 
 <!DOCTYPE html>
@@ -17,28 +17,28 @@ $base_url = 'http://localhost/adminavl_v3/'; //desa
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- TITLE -->
-    <?php if ($url == "/adminavl_v3/views/dashboard/") {?>
+    <?php if ($url == "/adminavl/views/dashboard/") {?>
     <title>Dashboard - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/estado-cliente/") {?>
+    <?php if ($url == "/adminavl/views/estado-cliente/") {?>
     <title>Estado Cliente - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/treseme/vehiculos/") {?>
+    <?php if ($url == "/adminavl/views/treseme/vehiculos/") {?>
     <title>Vehículos Treseme - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/treseme/emsefor/") {?>
+    <?php if ($url == "/adminavl/views/treseme/emsefor/") {?>
     <title>Emsefor Treseme - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/treseme/usuarios/") {?>
+    <?php if ($url == "/adminavl/views/treseme/usuarios/") {?>
     <title>Usuarios Treseme - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/sofofa/vehiculos/") {?>
+    <?php if ($url == "/adminavl/views/sofofa/vehiculos/") {?>
     <title>Vehículos Sofofa - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/integraciones/vehiculos/") {?>
+    <?php if ($url == "/adminavl/views/integraciones/vehiculos/") {?>
     <title>Vehículos Integraciones - AVLChile</title>
     <?php } ?>
-    <?php if ($url == "/adminavl_v3/views/integraciones/validaciones/") {?>
+    <?php if ($url == "/adminavl/views/integraciones/validaciones/") {?>
     <title>Validaciones Integraciones - AVLChile</title>
     <?php } ?>
 

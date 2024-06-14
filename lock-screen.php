@@ -2,8 +2,8 @@
     session_start();
     include "mcript.php";
     if (isset($_COOKIE['access_key'])) {
-        header("Location: http://localhost/adminavl_v3/views/dashboard");
-        //header("Location: https://webapp.avlchile.cl/adminavl_v3/views/dashboard");
+        header("Location: http://localhost/adminavl/views/dashboard");
+        //header("Location: https://webapp.avlchile.cl/adminavl/views/dashboard");
     }
 ?>
 <?php
