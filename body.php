@@ -37,8 +37,8 @@
         <script src="<?php echo $base_url?>assets/libs/node-waves/waves.min.js"></script>
 
         <!-- SIMPLEBAR JS -->
-        <script src="<?php echo $base_url?>assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="<?php echo $base_url?>assets/js/simplebar.js"></script>
+        
+        <!-- <script src="<?php echo $base_url?>assets/js/simplebar.js"></script> -->
 
         <!-- COLOR PICKER JS -->
         <script src="<?php echo $base_url?>assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
@@ -48,10 +48,9 @@
 
         <!-- STICKY JS -->
 		<script src="<?php echo $base_url?>assets/js/sticky.js"></script>
-
-        <!-- CUSTOM JS -->
+        
+        
         <script src="<?php echo $base_url?>assets/js/custom.js"></script>
-
         <!-- CUSTOM-SWITCHER JS -->
         <script src="<?php echo $base_url?>assets/js/custom-switcher.js"></script>
         <script src="<?php echo $base_url?>assets/js/configuracion.js"></script>

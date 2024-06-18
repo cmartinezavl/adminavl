@@ -29,6 +29,9 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <?php if ($url == "/adminavl/views/cotizacion/") {?>
     <title>Cotización - AVLChile</title>
     <?php } ?>
+    <?php if ($url == "/adminavl/views/solicitud_servicios/") {?>
+    <title>Solicitud de Servicios - AVLChile</title>
+    <?php } ?>
 
     <!-- FAVICON -->
     <link rel="icon" href="<?php echo $base_url?>assets/images/authentication/Logo_AVL.png">
@@ -58,6 +61,7 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>assets/libs/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/libs/fullcalendar/main.min.css">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -69,6 +73,8 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <script src="<?php echo $base_url?>assets/libs/prismjs/prism.js"></script>
     <script src="<?php echo $base_url?>assets/js/prism-custom.js"></script>
     <script src="<?php echo $base_url?>assets/js/Toasts.js"></script>
+    
+
     
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -90,7 +96,9 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <script src="https://code.highcharts.com/modules/timeline.js"></script>
     <script src="<?php echo $base_url?>assets/js/grouped-categories.js"></script>
     <script src="<?php echo $base_url; ?>assets/libs/sweetalert2/sweetalert2.min.js"></script>
-
+    <script src="<?php echo $base_url?>assets/libs/fullcalendar/main.min.js"></script>
+    <script src="<?php echo $base_url?>assets/libs/fullcalendar/locales/es.js"></script>
+    <script src="<?php echo $base_url?>assets/libs/simplebar/simplebar.min.js"></script>
     <style>
     .modal-header {
         padding: 14px;

@@ -121,6 +121,7 @@ $(function (e) {
             searchPlaceholder: 'Search...',
             sSearch: '',
         },
+        
     });
     var counter = 1;
     $('#addRow').on('click', function () {
