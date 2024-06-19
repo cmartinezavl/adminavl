@@ -40,9 +40,10 @@
 			$id_perfil = "";
 			$estado = "";
 
-			$query = "SELECT u.id_usuario, u.nombre, u.apellido, u.id_perfil, u.estado, p.nombre AS nombre_perfil
+			$query = "SELECT u.id_usuario, u.nombre, u.apellido, u.id_perfil, u.estado, p.nombre AS nombre_perfil, CASE WHEN u.id_cliente IS NULL THEN NULL ELSE CONCAT(c.id_cliente, ' - ', c.nombre) END AS cliente
 					 FROM usuario u
                      INNER JOIN perfil p ON p.id_perfil = u.id_perfil
+                     LEFT JOIN cliente c ON c.id_cliente = u.id_cliente
 					 WHERE u.usuario = '$usuario'
 					 AND u.password = '$pass'";
 
@@ -57,6 +58,7 @@
 					$id_perfil = $rows->id_perfil;
 					$estado = $rows->estado;
                     $perfil = $rows->nombre_perfil;
+                    $cliente = $rows->cliente;
 				}
                 
                 if($estado == 1){
@@ -66,6 +68,10 @@
 					setcookie('apellido', $apellido, time() + 10800);
 					setcookie('id_perfil', $id_perfil, time() + 10800);
                     setcookie('perfil', $perfil, time() + 10800);
+
+                    if($id_perfil == 3){
+                        setcookie('cliente', $cliente, time() + 10800);
+                    }
 
                     if($recuerdame == 1){
                         setcookie('user', $_POST["usuario"], time() + 43200);

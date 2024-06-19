@@ -15,14 +15,32 @@
 .fc-scrollgrid-sync-table {
     width: 100% !important;
 }
+
 #full-calendar-activity li:hover {
     color: var(--default-text-color);
     background-color: var(--list-hover-focus-bg);
     border-radius: 4px;
-    cursor:pointer;
+    cursor: pointer;
 }
 </style>
 <div class="container-full mt-2 mb-2">
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header text-default">
+                <svg class="flex-shrink-0 me-2 svg-primary" xmlns="http://www.w3.org/2000/svg" height="1.5rem"
+                    viewBox="0 0 24 24" width="1.5rem" fill="#000000">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path
+                        d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                </svg>
+                <strong class="me-auto">¡Alerta!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Seleccione las coordenadas en el mapa con el click derecho.
+            </div>
+        </div>
+    </div>
     <div class="row g-2">
         <div class="col-xl-3">
             <div class="card custom-card">

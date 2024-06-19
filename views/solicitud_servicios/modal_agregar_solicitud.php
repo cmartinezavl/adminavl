@@ -1,3 +1,8 @@
+<style>
+.gm-ui-hover-effect {
+    display: none !important;
+}
+</style>
 <div class="modal fade" id="modalAgregarSolicitud" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -9,21 +14,24 @@
             </div>
             <div class="modal-body" style="background-color:var(--default-body-bg-color);">
                 <div class="row g-2">
-                    <div class="card p-3 bg-white col-xl-5" style="border-radius:0.5rem;"
-                        data-animation="FadeIn">
+                    <div class="card p-3 bg-white col-xl-5" style="border-radius:0.5rem;" data-animation="FadeIn">
                         <div class="row g-2">
-                            <?php if($_COOKIE['id_perfil'] == 4 || $_COOKIE['id_perfil'] == 1){ ?>
-                            <div class="col-xl-6">
+                            <div class="col-xl-12">
                                 <div class="form-group">
                                     <label for="" class="form-label">Cliente</label>
-                                    <input type="text" class="form-control form-add" id="cliente" required>
+                                    <?php if($_COOKIE['id_perfil'] == 3){ ?>
+                                        <input type="text" class="form-control form-add" id="cliente" value="<?php echo $_COOKIE['cliente']; ?>" readonly required>
+                                    <?php } else {?>
+                                        <div id="cliente" placeholder="Seleccione un cliente"></div>
+                                    <?php } ?>
                                 </div>
                             </div>
-                            <?php } ?>
-                            <div class="col-xl-6">
+                            <div class="col-xl-12 mt-2">
                                 <div class="form-group">
                                     <label for="" class="form-label">Empresa</label>
-                                    <input type="text" class="form-control form-add" id="empresa" required>
+                                    <select for="form-select is-invalid" name="empresa" class="form-control" required data-trigger id="empresa">
+                                        <option value="" selected>Seleccione un empresa</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-xl-6 mt-2">
@@ -36,12 +44,6 @@
                                 <div class="form-group">
                                     <label for="" class="form-label">Numero Contacto</label>
                                     <input type="text" class="form-control form-add" id="numero" required>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 mt-2">
-                                <div class="form-group">
-                                    <label for="" class="form-label">Coordenadas</label>
-                                    <input type="text" class="form-control form-add" id="coordenadas" required>
                                 </div>
                             </div>
                         </div>

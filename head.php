@@ -73,7 +73,6 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <script src="<?php echo $base_url?>assets/libs/prismjs/prism.js"></script>
     <script src="<?php echo $base_url?>assets/js/prism-custom.js"></script>
     <script src="<?php echo $base_url?>assets/js/Toasts.js"></script>
-    
 
     
     <!-- Datatables -->
@@ -95,7 +94,7 @@ $base_url = 'http://localhost/adminavl/'; //desa
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
     <script src="https://code.highcharts.com/modules/timeline.js"></script>
     <script src="<?php echo $base_url?>assets/js/grouped-categories.js"></script>
-    <script src="<?php echo $base_url; ?>assets/libs/sweetalert2/sweetalert2.min.js"></script>
+    <script src="<?php echo $base_url?>assets/libs/sweetalert2/sweetalert2.min.js"></script>
     <script src="<?php echo $base_url?>assets/libs/fullcalendar/main.min.js"></script>
     <script src="<?php echo $base_url?>assets/libs/fullcalendar/locales/es.js"></script>
     <script src="<?php echo $base_url?>assets/libs/simplebar/simplebar.min.js"></script>

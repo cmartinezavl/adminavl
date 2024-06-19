@@ -6,14 +6,18 @@
  * Time: 18:59
  */
 
- setcookie('access_key', '', 0);
- setcookie('id', '', 0);
- setcookie('nombre', '', 0);
- setcookie('apellido', '', 0);
- setcookie('id_perfil', '', 0);
- setcookie('perfil', '', 0);
- setcookie('pass', '', 0);
- 
+setcookie('access_key', '', 0);
+setcookie('id', '', 0);
+setcookie('nombre', '', 0);
+setcookie('apellido', '', 0);
+setcookie('id_perfil', '', 0);
+setcookie('perfil', '', 0);
+setcookie('pass', '', 0);
+
+if(isset($_COOKIE['cliente'])){
+    setcookie('cliente',  '', 0);
+}
+
 if(isset($_COOKIE['user'])){
     header('Location: http://localhost/adminavl/lock-screen.php');
     // header('Location: https://webapp.avlchile.cl/adminavl/login.php');
