@@ -5,14 +5,6 @@ let latLng;
 let markers = [];
 var count = 1;
 
-$(document).ready(function(){
-  VirtualSelect.init({
-    ele: "#cliente",
-    multiple: false,
-    search: true,
-  });
-})
-
 var id_perfil = getCookie("id_perfil");
 function getCookie(name) {
   let value = "; " + document.cookie;
@@ -22,6 +14,21 @@ function getCookie(name) {
     return parts.pop().split(";").shift();
   }
 }
+
+$(document).ready(function(){
+  if(id_perfil){
+    VirtualSelect.init({
+      ele: "#cliente",
+      multiple: false,
+      search: true,
+    });
+  }
+  VirtualSelect.init({
+    ele: "#empresa",
+    multiple: false,
+    search: true,
+  });
+})
 
 calendario()
 function calendario(){

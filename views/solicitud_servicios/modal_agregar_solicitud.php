@@ -26,21 +26,19 @@
                                     <?php } ?>
                                 </div>
                             </div>
-                            <div class="col-xl-12 mt-2">
+                            <div class="col-xl-12 mt-3">
                                 <div class="form-group">
                                     <label for="" class="form-label">Empresa</label>
-                                    <select for="form-select is-invalid" name="empresa" class="form-control" required data-trigger id="empresa">
-                                        <option value="" selected>Seleccione un empresa</option>
-                                    </select>
+                                    <div id="empresa" placeholder="Seleccione una empresa"></div>
                                 </div>
                             </div>
-                            <div class="col-xl-6 mt-2">
+                            <div class="col-xl-6 mt-3">
                                 <div class="form-group">
                                     <label for="" class="form-label">Nombre Contacto</label>
                                     <input type="text" class="form-control form-add" id="nombre" required>
                                 </div>
                             </div>
-                            <div class="col-xl-6 mt-2">
+                            <div class="col-xl-6 mt-3">
                                 <div class="form-group">
                                     <label for="" class="form-label">Numero Contacto</label>
                                     <input type="text" class="form-control form-add" id="numero" required>
@@ -49,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-xl-7">
-                        <div id="map" class="bg-white" style="height: 100%; border-radius:0.5rem;height: 250px;"></div>
+                        <div id="map" class="bg-white" style="height: 100%; border-radius:0.5rem;height: 265px;"></div>
                     </div>
                     <div class="card p-3 bg-white col-xl-12" style="border-radius:0.5rem;" data-animation="FadeIn">
                         <div class="d-flex align-items-center justify-content-end mb-3">
