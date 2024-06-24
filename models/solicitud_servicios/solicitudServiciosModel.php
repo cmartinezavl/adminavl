@@ -30,7 +30,7 @@ switch ($call) {
     case "getEmpresa":
         try{
 
-            $tsql = "SELECT id_empresa AS value, nombre AS label
+            $tsql = "SELECT CONCAT(id_empresa, ' - ', nombre) AS label
             FROM empresa;";  
                                 
             $result = sqlsrv_query( $conexion,  $tsql);

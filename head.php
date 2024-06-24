@@ -110,6 +110,10 @@ $base_url = 'http://localhost/adminavl/'; //desa
         padding: 8px;
         border-block-start: 1px solid var(--default-border);
     }
+
+    body.no-scroll {
+            overflow: hidden !important;
+        }
     </style>
 
 </head>

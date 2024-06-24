@@ -19,7 +19,7 @@
 }
 
 .vscomp-wrapper {
-    color: #333;
+    color: var(--default-text-color);
     display: inline-flex;
     flex-wrap: wrap;
     font-family: sans-serif;

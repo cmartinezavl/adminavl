@@ -78,10 +78,9 @@ function getEmpresas(){
       call: "getEmpresa",
     },
     success: function (data) {
-      $("#empresa").empty();
-      $("#empresa").append("<option value='' selected disabled>Seleccione una empresa</option>");
+      $("#empresaList").empty();
       $.each(data, function (key, registro) {
-        $("#empresa").append("<option value="+registro.id_empresa+">"+registro.nombre+"</option>");
+        $("#empresaList").append("<option>"+registro.label+"</option>");
       })
     },
     error: function (data) {
@@ -98,6 +97,7 @@ $("#btn-crear-solicitud").click(function () {
   clearMarkers()
 
   getClientes()
+  getEmpresas()
 
   $("#empresa").val("");
   $("#nombre").val("");
@@ -120,35 +120,41 @@ $("#btn-crear-solicitud").click(function () {
           'data-bs-parent="#accordioncustomicon1Example">'+
           '<div class="accordion-body">'+
             '<div class="row g-2">'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Patente</label>'+
                       '<input type="text" class="form-control form-add" id="patente'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Tipo Vehiculo</label>'+
                       '<input type="text" class="form-control form-add" id="vehiculo'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Marca</label>'+
                       '<input type="text" class="form-control form-add" id="marca'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Modelo</label>'+
                       '<input type="text" class="form-control form-add" id="modelo'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Año</label>'+
                       '<input type="text" class="form-control form-add" id="anio'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+                    '<div class="col-xl-4">'+
                       '<label for="input-label" class="form-label">Tipo Dispositivo</label>'+
                       '<input type="text" class="form-control form-add" id="dispositivo'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-2">'+
+                    '<div class="col-xl-4 mb-2">'+
                       '<label for="input-label" class="form-label">Servicio</label>'+
                       '<input type="text" class="form-control form-add" id="servicio'+count+'" required>'+
                     '</div>'+
-                    '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-2">'+
+                    '<div class="col-xl-4 mb-2">'+
+                      '<label for="input-label" class="form-label">Empresa</label>'+
+                      '<input type="text" class="form-control form-add" id="empresa'+count+'" list="empresaList" required>'+
+                      '<datalist id="empresaList">'+
+                      '</datalist>'+
+                    '</div>'+
+                    '<div class="col-xl-4 mb-2">'+
                       '<label for="input-label" class="form-label">Coordenadas</label>'+
                       '<div class="input-group">'+
                         '<input type="text" class="form-control form-add" id="coordenadas'+count+'" readonly required>'+
@@ -160,7 +166,7 @@ $("#btn-crear-solicitud").click(function () {
               '</div>'+
           '</div>'+
       '</div>');
-     
+  document.body.classList.add("no-scroll");
   $("#modalAgregarSolicitud").modal("show");
 });
 
@@ -183,35 +189,41 @@ $("#btn-mas").click(function(){
           'data-bs-parent="#accordioncustomicon1Example">'+
           '<div class="accordion-body">'+
             '<div class="row g-2">'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Patente</label>'+
                 '<input type="text" class="form-control form-add" id="patente'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Tipo Vehiculo</label>'+
                 '<input type="text" class="form-control form-add" id="vehiculo'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Marca</label>'+
                 '<input type="text" class="form-control form-add" id="marca'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Modelo</label>'+
                 '<input type="text" class="form-control form-add" id="modelo'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Año</label>'+
                 '<input type="text" class="form-control form-add" id="anio'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">'+
+              '<div class="col-xl-4">'+
                 '<label for="input-label" class="form-label">Tipo Dispositivo</label>'+
                 '<input type="text" class="form-control form-add" id="dispositivo'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-2">'+
+              '<div class="col-xl-4 mb-2">'+
                 '<label for="input-label" class="form-label">Servicio</label>'+
                 '<input type="text" class="form-control form-add" id="servicio'+count+'" required>'+
               '</div>'+
-              '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mb-2">'+
+              '<div class="col-xl-4 mb-2">'+
+                '<label for="input-label" class="form-label">Empresa</label>'+
+                '<input type="text" class="form-control form-add" id="empresa'+count+'" list="empresaList" required>'+
+                '<datalist id="empresaList">'+
+                '</datalist>'+
+              '</div>'+
+              '<div class="col-xl-4 mb-2">'+
                 '<label for="input-label" class="form-label">Coordenadas</label>'+
                 '<div class="input-group">'+
                   '<input type="text" class="form-control form-add" id="coordenadas'+count+'" readonly required>'+
